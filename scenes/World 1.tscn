@@ -1,0 +1,49 @@
+[gd_scene format=2]
+
+[node name="World 1" type="Spatial"]
+
+[node name="Start" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 6.1, -86.4 )
+omni_range = 9.651
+
+[node name="Run" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5, -55 )
+light_color = Color( 0.615686, 0.992157, 1, 1 )
+omni_range = 71.244
+omni_attenuation = 1.68179
+
+[node name="Jump" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 6, -21 )
+light_color = Color( 0.933333, 0.466667, 1, 1 )
+light_energy = 0.645
+omni_range = 12.803
+
+[node name="End" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.594, 0.152 )
+light_color = Color( 0.929412, 0.8, 0.0980392, 1 )
+light_indirect_energy = 2.174
+omni_range = 30.498
+omni_attenuation = 1.56917
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="Room 1" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+use_collision = true
+invert_faces = true
+width = 20.0
+height = 20.0
+depth = 20.0
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 40, -6, 4, -49 )
+invert_faces = true
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 4, -6, -2, -18 )
+invert_faces = true
+
+[node name="Platform" type="CSGBox" parent="."]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -6, 0, -18 )
+use_collision = true

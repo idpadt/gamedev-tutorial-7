@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/World 1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/WinArea.tscn" type="PackedScene" id=3]
+
+[node name="Level 1" type="Node"]
+
+[node name="World 1" parent="." instance=ExtResource( 2 )]
+
+[node name="WinArea" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6237, 2.3363, 6.23013 )
+
+[node name="WinArea2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86637, -4.01496, -15.1119 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 2, -86 )
+
+[node name="Obstacle" type="CSGBox" parent="."]
+transform = Transform( 3.5, 0, 0, 0, 2, 0, 0, 0, 2, -6, 4, -80.3 )
+use_collision = true
+
+[node name="Crouch Label" type="Label3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 2, -83 )
+pixel_size = 0.04
+modulate = Color( 0, 0, 0, 1 )
+text = "CROUCH
+HOLD (CTRL)"
+
+[node name="Run Label" type="Label3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 2, -73 )
+pixel_size = 0.04
+modulate = Color( 0, 0, 0, 1 )
+text = "RUN
+HOLD (SHIFT)"
+
+[node name="Jump Label" type="Label3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 3, -23 )
+pixel_size = 0.04
+modulate = Color( 0, 0, 0, 1 )
+text = "JUMP
+PRESS (SPACE)"
